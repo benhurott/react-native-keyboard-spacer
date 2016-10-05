@@ -56,8 +56,8 @@ export default class KeyboardSpacer extends Component {
   }
 
   componentDidMount() {
-    const updateListener = Platform.OS === 'android' ? 'keyboardDidShow' : 'keyboardWillShow';
-    const resetListener = Platform.OS === 'android' ? 'keyboardDidHide' : 'keyboardWillHide';
+    const updateListener = 'keyboardWillShow';
+    const resetListener = 'keyboardWillHide';
     this._listeners = [
       Keyboard.addListener(updateListener, this.updateKeyboardSpace),
       Keyboard.addListener(resetListener, this.resetKeyboardSpace)
